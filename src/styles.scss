@@ -1,0 +1,62 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~material-design-icons/iconfont/material-icons.css';
+
+
+/* General */
+
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+
+/* Material */
+
+body {
+  background-color: #f3f3f3;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+
+/* Breadcrumbs */
+
+ol.app-breadcrumb {
+  padding-left: 0;
+  list-style-position: inside;
+}
+
+.app-breadcrumb > li {
+  display: inline;
+}
+
+.app-breadcrumb > li.divider {
+  color: #aaa;
+}
+
+.app-breadcrumb a {
+  text-decoration: none;
+}

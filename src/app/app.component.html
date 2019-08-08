@@ -1,0 +1,20 @@
+<section class="mat-typography">
+  <div class="main" *ngIf="!initializing">
+    <app-header></app-header>
+
+    <section class="mat-typography">
+      <mat-sidenav-container class="sidenav-container">
+        <mat-sidenav #sidenav class="sidenav-content" mode="side" [(opened)]="sideNavOpened">
+          <p><a [routerLink]="['']">Home</a></p>
+          <p><a [routerLink]="['appInfo']">App Info</a></p>
+          <p><a [routerLink]="['userInfo']">User Info</a></p>
+        </mat-sidenav>
+        <mat-sidenav-content class="sidenav-content">
+          <router-outlet></router-outlet>
+          <app-footer></app-footer>
+        </mat-sidenav-content>
+      </mat-sidenav-container>
+    </section>
+
+  </div>
+</section>

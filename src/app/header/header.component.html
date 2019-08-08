@@ -1,0 +1,42 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <div class="clickable" style="margin-top: 10px">
+      <mat-icon (click)="sideNavBtnClicked()">menu</mat-icon>
+    </div>
+
+    <a class="title" [routerLink]="['']">
+      <span>{{ appInfo.title }}</span>
+    </a>
+
+    <span class="spacer"></span>
+
+    <div class="user-image-holder clickable" [matMenuTriggerFor]="menu" style="padding-top: 3px;">
+      <span style="padding-right: 5px">{{ appInfo.user.name }}</span>
+    </div>
+    <div class="user-image-holder clickable" [matMenuTriggerFor]="menu">
+      <mat-icon>account_circle</mat-icon>
+    </div>
+    <mat-menu #menu="matMenu">
+      <!--<button class="user-image" mat-menu-item [routerLink]="['/userInfo']">-->
+      <!--<img class="user-image-100" src="./assets/images/unknown-user.png">-->
+      <!--</button>-->
+      <!--<button class="user-name" mat-menu-item [routerLink]="['/userInfo']">-->
+      <!--{{ appInfo.user.username }}-->
+      <!--</button>-->
+      <button mat-menu-item [routerLink]="['userInfo']">
+        User Info
+      </button>
+      <button mat-menu-item [routerLink]="['appInfo']">
+        App Info
+      </button>
+      <a mat-menu-item href="/swagger-ui.html" target="_blank" *ngIf="isAdmin">
+        Rest API
+      </a>
+      <mat-divider></mat-divider>
+      <a mat-menu-item [routerLink]="['logout']">
+      <!--<a mat-menu-item href="logout">-->
+        Logout
+      </a>
+    </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>
