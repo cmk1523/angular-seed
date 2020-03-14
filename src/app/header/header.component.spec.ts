@@ -5,6 +5,7 @@ import {HttpClient} from '@angular/common/http';
 import {EventService} from '../shared/services/event.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {MaterialModule} from '../shared/material/material.module';
+import {AppService} from '../shared/services/app.service';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -17,6 +18,7 @@ describe('HeaderComponent', () => {
         MaterialModule
       ],
       providers: [
+        AppService,
         { provide: HttpClient, useValue: {} },
         EventService,
         { provide: MatSnackBar, useValue: {} },
