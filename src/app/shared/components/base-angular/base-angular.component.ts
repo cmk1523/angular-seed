@@ -1,5 +1,5 @@
 import {ReplaySubject} from 'rxjs';
-import {AppService} from '../services/app.service';
+import {AppService} from '../../services/app.service';
 import {OnInit} from '@angular/core';
 
 export class BaseAngularComponent implements OnInit {

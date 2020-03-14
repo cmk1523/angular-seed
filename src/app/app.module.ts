@@ -15,6 +15,8 @@ import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MessagesComponent } from './messages/messages.component';
+import { CustomTableComponent } from './shared/components/custom-table/custom-table.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     HeaderComponent,
     FooterComponent,
     AppInfoComponent,
-    UserInfoComponent
+    UserInfoComponent,
+    MessagesComponent,
+    CustomTableComponent
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,7 @@ import {BaseResolver} from './shared/resolvers/BaseResolver';
 import {AppInfoComponent} from './app-info/app-info.component';
 import {UserInfoComponent} from './user-info/user-info.component';
 import {PageNotFoundComponent} from './invalid/page-not-found/page-not-found.component';
+import {MessagesComponent} from './messages/messages.component';
 
 
 const routes: Routes = [
@@ -30,6 +31,13 @@ const routes: Routes = [
   {
     path: 'userInfo',
     component: UserInfoComponent,
+    resolve: {
+      data: BaseResolver
+    }
+  },
+  {
+    path: 'messages',
+    component: MessagesComponent,
     resolve: {
       data: BaseResolver
     }
