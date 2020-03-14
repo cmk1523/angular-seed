@@ -1,9 +1,9 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
 import {AppService} from './shared/services/app.service';
 import {first, takeUntil} from 'rxjs/operators';
 import {BaseAngularComponent} from './shared/base-angular/base-angular.component';
 import {EventService} from './shared/services/event.service';
-import {MatSidenav, MatSidenavContainer} from '@angular/material';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {MatSidenav} from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-root',

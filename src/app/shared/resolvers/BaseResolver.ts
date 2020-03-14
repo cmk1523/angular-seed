@@ -1,8 +1,8 @@
+import {AppService} from '../services/app.service';
+import {Observable} from 'rxjs/internal/Observable';
 import {Injectable} from '@angular/core';
 import {ActivatedRouteSnapshot, Resolve, Router, RouterStateSnapshot} from '@angular/router';
-import {AppService} from '../services/app.service';
-import {MatSnackBar} from '@angular/material';
-import {Observable} from 'rxjs/internal/Observable';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Injectable()
 export class BaseResolver implements Resolve<any> {

@@ -1,10 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UnauthorizedComponent } from './unauthorized.component';
-import {SharedComponentsModule} from '../../shared/components/shared-components.module';
 import {RouterTestingModule} from '@angular/router/testing';
-import {InMemoryDatabase} from '../../shared/InMemoryDatabase';
-import {AppService} from '../../shared/services/app.service';
 
 describe('NotEnabledComponent', () => {
   let component: UnauthorizedComponent;
@@ -16,7 +13,6 @@ describe('NotEnabledComponent', () => {
         UnauthorizedComponent
       ],
       imports: [
-        SharedComponentsModule,
         RouterTestingModule.withRoutes([]),
       ]
     })
@@ -26,7 +22,6 @@ describe('NotEnabledComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(UnauthorizedComponent);
     component = fixture.componentInstance;
-    AppService.APP_INFO = InMemoryDatabase.GenerateAppInfoResponse().data;
     fixture.detectChanges();
   });
 
