@@ -1,6 +1,7 @@
 import {BaseAngularComponent} from '../shared/base-angular/base-angular.component';
 import {EventService} from '../shared/services/event.service';
 import {Component, OnInit} from '@angular/core';
+import {AppService} from '../shared/services/app.service';
 
 @Component({
   selector: 'app-header',
@@ -9,11 +10,12 @@ import {Component, OnInit} from '@angular/core';
 })
 export class HeaderComponent extends BaseAngularComponent implements OnInit {
 
-  constructor(private eventService: EventService) {
-    super();
+  constructor(protected appService: AppService, protected eventService: EventService) {
+    super(appService);
   }
 
   ngOnInit() {
+    super.ngOnInit();
   }
 
   sideNavBtnClicked() {

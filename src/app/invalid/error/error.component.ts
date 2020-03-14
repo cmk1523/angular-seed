@@ -1,5 +1,6 @@
 import {BaseAngularComponent} from '../../shared/base-angular/base-angular.component';
 import {Component, OnInit} from '@angular/core';
+import {AppService} from '../../shared/services/app.service';
 
 @Component({
   selector: 'app-error',
@@ -7,11 +8,12 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./error.component.scss']
 })
 export class ErrorComponent extends BaseAngularComponent implements OnInit {
-  constructor() {
-    super();
+  constructor(protected appService: AppService) {
+    super(appService);
   }
 
   ngOnInit() {
+    super.ngOnInit();
   }
 
 }

@@ -1,4 +1,7 @@
 <section class="mat-typography">
+  <div class="initializing text-center" *ngIf="initializing">
+    Loading...
+  </div>
   <div class="main" *ngIf="!initializing">
     <app-header></app-header>
 

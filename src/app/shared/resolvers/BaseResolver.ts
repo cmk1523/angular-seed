@@ -25,25 +25,24 @@ export class BaseResolver implements Resolve<any> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
     return new Observable((observer) => {
-      this.appService.getAppInfo().subscribe(
-        (appInfo: any) => {
-          this.appInfo = appInfo;
-          // this.appInfo.user = User.ConvertToBasicUser(appInfo.user);
+      this.appService.getAppInfo().subscribe((appInfo: any) => {
+        this.appInfo = appInfo;
+        // this.appInfo.user = User.ConvertToBasicUser(appInfo.user);
 
-          // if (!this.appInfo.user.isEnabled()) {
-          //   this.snackBar.open('Not Enabled', 'Forwarding',
-          //     {duration: 2000});
-          //   this.router.navigate(['/notenabled']);
-          // }
+        // if (!this.appInfo.user.isEnabled()) {
+        //   this.snackBar.open('Not Enabled', 'Forwarding',
+        //     {duration: 2000});
+        //   this.router.navigate(['/notenabled']);
+        // }
 
-          observer.next(appInfo);
-        }, (e: any) => {
-          BaseResolver.HandleError(e, 'BaseResolver - Unable to get application info', this.snackBar);
-          window.location.href = './login';
-          observer.complete();
-        }, () => {
-          observer.complete();
-        }, );
+        observer.next(appInfo);
+      }, (e: any) => {
+        BaseResolver.HandleError(e, 'BaseResolver - Unable to get application info', this.snackBar);
+        window.location.href = './login';
+        observer.complete();
+      }, () => {
+        observer.complete();
+      });
     });
   }
 }

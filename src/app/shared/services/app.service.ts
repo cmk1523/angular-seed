@@ -10,7 +10,17 @@ import {MatSnackBar} from '@angular/material/snack-bar';
   providedIn: 'root'
 })
 export class AppService extends BaseService {
-  public static APP_INFO: any = null;
+  public static APP_INFO: any = {
+    title: '?',
+    version: '?',
+    buildNumber: '?',
+    buildDateTime: '?',
+    user: {
+      id: '?',
+      name: '?'
+    }
+  };
+
   protected appUrl = this.baseUrl + 'api/v1/app';
   public appInfo: ReplaySubject<any> = new ReplaySubject<any>(1);
 
@@ -20,7 +30,7 @@ export class AppService extends BaseService {
 
   getAppInfo(): Observable<any> {
     return new Observable((observer) => {
-      if (!AppService.APP_INFO) {
+      if (AppService.APP_INFO.title === '?') {
         this.eventService.loading.next(true);
 
         // TODO: ...

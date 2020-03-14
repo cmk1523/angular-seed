@@ -15,7 +15,9 @@ export class BaseService {
     return JSON.stringify(a) !== JSON.stringify(b);
   }
 
-  constructor(protected http: HttpClient, protected eventService: EventService, protected snackBar: MatSnackBar) {
+  constructor(protected http: HttpClient,
+              protected eventService: EventService,
+              protected snackBar: MatSnackBar) {
   }
 
   protected handleError(error: any) {

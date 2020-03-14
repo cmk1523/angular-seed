@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UserInfoComponent } from './user-info.component';
+import {HttpClient} from '@angular/common/http';
+import {EventService} from '../shared/services/event.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 describe('UserInfoComponent', () => {
   let component: UserInfoComponent;
@@ -8,7 +11,12 @@ describe('UserInfoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UserInfoComponent ]
+      declarations: [ UserInfoComponent ],
+      providers: [
+        { provide: HttpClient, useValue: {} },
+        EventService,
+        { provide: MatSnackBar, useValue: {} },
+      ]
     })
     .compileComponents();
   }));

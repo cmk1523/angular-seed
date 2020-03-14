@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {BaseAngularComponent} from '../shared/base-angular/base-angular.component';
+import {AppService} from '../shared/services/app.service';
 
 @Component({
   selector: 'app-user-info',
@@ -8,11 +9,12 @@ import {BaseAngularComponent} from '../shared/base-angular/base-angular.componen
 })
 export class UserInfoComponent extends BaseAngularComponent implements OnInit {
 
-  constructor() {
-    super();
+  constructor(protected appService: AppService) {
+    super(appService);
   }
 
   ngOnInit() {
+    super.ngOnInit();
   }
 
 }

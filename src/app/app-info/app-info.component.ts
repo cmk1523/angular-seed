@@ -1,5 +1,6 @@
 import {BaseAngularComponent} from '../shared/base-angular/base-angular.component';
 import {Component, OnInit} from '@angular/core';
+import {AppService} from '../shared/services/app.service';
 
 @Component({
   selector: 'app-app-info',
@@ -8,11 +9,12 @@ import {Component, OnInit} from '@angular/core';
 })
 export class AppInfoComponent extends BaseAngularComponent implements OnInit {
 
-  constructor() {
-    super();
+  constructor(protected appService: AppService) {
+    super(appService);
   }
 
   ngOnInit() {
+    super.ngOnInit();
   }
 
 }
