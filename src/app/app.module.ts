@@ -17,6 +17,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MessagesComponent } from './messages/messages.component';
 import { CustomTableComponent } from './shared/components/custom-table/custom-table.component';
+import { MessageAddComponent } from './message-add/message-add.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CustomTableComponent } from './shared/components/custom-table/custom-ta
     AppInfoComponent,
     UserInfoComponent,
     MessagesComponent,
-    CustomTableComponent
+    CustomTableComponent,
+    MessageAddComponent
   ],
   imports: [
     BrowserModule,

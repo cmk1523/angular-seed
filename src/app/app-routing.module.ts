@@ -6,6 +6,7 @@ import {AppInfoComponent} from './app-info/app-info.component';
 import {UserInfoComponent} from './user-info/user-info.component';
 import {PageNotFoundComponent} from './invalid/page-not-found/page-not-found.component';
 import {MessagesComponent} from './messages/messages.component';
+import {MessageAddComponent} from './message-add/message-add.component';
 
 
 const routes: Routes = [
@@ -38,6 +39,13 @@ const routes: Routes = [
   {
     path: 'messages',
     component: MessagesComponent,
+    resolve: {
+      data: BaseResolver
+    }
+  },
+  {
+    path: 'createMessage',
+    component: MessageAddComponent,
     resolve: {
       data: BaseResolver
     }

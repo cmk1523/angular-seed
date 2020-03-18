@@ -12,6 +12,8 @@ import {User} from '../models/User';
   providedIn: 'root'
 })
 export class AppService extends BaseService {
+  public static DEFAULT_SNACKBAR_DURATION = 2000;
+
   public static APP_INFO: AppInfo = {
     buildDateTime: '',
     buildNumber: '',

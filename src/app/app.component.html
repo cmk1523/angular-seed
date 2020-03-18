@@ -8,10 +8,10 @@
     <section class="mat-typography">
       <mat-sidenav-container class="sidenav-container">
         <mat-sidenav #sidenav class="sidenav-content" mode="side" [(opened)]="sideNavOpened">
-          <p><a [routerLink]="['']">Home</a></p>
-          <p><a [routerLink]="['appInfo']">App Info</a></p>
-          <p><a [routerLink]="['userInfo']">User Info</a></p>
-          <p><a [routerLink]="['messages']">Messages</a></p>
+          <p><a [routerLink]="['/']">Home</a></p>
+          <p><a [routerLink]="['/appInfo']">App Info</a></p>
+          <p><a [routerLink]="['/userInfo']">User Info</a></p>
+          <p><a [routerLink]="['/messages']">Messages</a></p>
         </mat-sidenav>
         <mat-sidenav-content class="sidenav-content">
           <router-outlet></router-outlet>

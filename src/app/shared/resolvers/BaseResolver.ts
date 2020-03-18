@@ -3,6 +3,7 @@ import {Observable} from 'rxjs/internal/Observable';
 import {Injectable} from '@angular/core';
 import {ActivatedRouteSnapshot, Resolve, Router, RouterStateSnapshot} from '@angular/router';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {first} from 'rxjs/operators';
 
 @Injectable()
 export class BaseResolver implements Resolve<any> {
@@ -16,16 +17,16 @@ export class BaseResolver implements Resolve<any> {
 
     if (e.message != null && e.message.indexOf('Read timed out') > -1) {
       snackBar.open(msg, 'Resolve Error - Request Timeout',
-        {duration: 4000} );
+        { duration: AppService.DEFAULT_SNACKBAR_DURATION } );
     } else {
       snackBar.open(msg, 'Resolve Error',
-        {duration: 2000});
+        { duration: AppService.DEFAULT_SNACKBAR_DURATION });
     }
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
     return new Observable((observer) => {
-      this.appService.getAppInfo().subscribe((appInfo: any) => {
+      this.appService.getAppInfo().pipe(first()).subscribe((appInfo: any) => {
         this.appInfo = appInfo;
         // this.appInfo.user = User.ConvertToBasicUser(appInfo.user);
 
